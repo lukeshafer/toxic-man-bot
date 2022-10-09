@@ -1,4 +1,5 @@
 // src/pages/_app.tsx
+import "mvp.css";
 import "../styles/globals.css";
 import { SessionProvider } from "next-auth/react";
 import type { Session } from "next-auth";

@@ -14,10 +14,13 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.33.0
   '@typescript-eslint/parser': ^5.33.0
   autoprefixer: ^10.4.7
+  discord-interactions: ^3.2.0
   eslint: 8.22.0
   eslint-config-next: 12.3.1
+  mvp.css: ^1.12.0
   next: 12.3.1
   next-auth: ^4.12.3
+  nodemailer: ^6.8.0
   postcss: ^8.4.14
   prettier: ^2.7.1
   prettier-plugin-tailwindcss: ^0.1.13
@@ -37,8 +40,11 @@ dependencies:
   '@trpc/next': 10.0.0-proxy-beta.15_hnelfh2uh2be53thticqnzktqa
   '@trpc/react': 10.0.0-proxy-beta.15_oqq3zeu53pwwxzkjqaoxtnh3le
   '@trpc/server': 10.0.0-proxy-beta.15
+  discord-interactions: 3.2.0
+  mvp.css: 1.12.0
   next: 12.3.1_biqbaboplfbrettd7655fr4n2y
-  next-auth: 4.13.0_azq6kxkn3od7qdylwkyksrwopy
+  next-auth: 4.13.0_pvhs6umhoiyo7cgwjp6cvqsra4
+  nodemailer: 6.8.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   superjson: 1.9.1
@@ -119,7 +125,7 @@ packages:
       next-auth: ^4
     dependencies:
       '@prisma/client': 4.4.0_prisma@4.4.0
-      next-auth: 4.13.0_azq6kxkn3od7qdylwkyksrwopy
+      next-auth: 4.13.0_pvhs6umhoiyo7cgwjp6cvqsra4
     dev: false
 
   /@next/env/12.3.1:
@@ -882,6 +888,13 @@ packages:
     dependencies:
       path-type: 4.0.0
     dev: true
+
+  /discord-interactions/3.2.0:
+    resolution: {integrity: sha512-/J25RpYlokRW+2HmU5C2xo9bcgCWIzCl+MRRLCL/XvD+Hqe2WyQc639vUUKUNi6hdSdWb2kGNZDkMZxDky2dZg==}
+    engines: {node: '>=12'}
+    dependencies:
+      tweetnacl: 1.0.3
+    dev: false
 
   /dlv/1.1.3:
     resolution: {integrity: sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==}
@@ -1729,6 +1742,10 @@ packages:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
     dev: true
 
+  /mvp.css/1.12.0:
+    resolution: {integrity: sha512-X/nIJUP/aIaD6gzPEOLIQxxotZEpRhnwKADT4ydxnnt8AACOSu/PJxFKCW1ouxbXVVERWOYxJp/tA45U0EVPaw==}
+    dev: false
+
   /nanoid/3.3.4:
     resolution: {integrity: sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -1738,7 +1755,7 @@ packages:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
 
-  /next-auth/4.13.0_azq6kxkn3od7qdylwkyksrwopy:
+  /next-auth/4.13.0_pvhs6umhoiyo7cgwjp6cvqsra4:
     resolution: {integrity: sha512-FtkPpeb9Bax6yKDaxcaGIvZZjvr10JaU2AsBYv1yv4N6rP86Xa7/4Ro1Aq94YGwsYzk+YKS52CRjD2DqCcSmVA==}
     engines: {node: ^12.19.0 || ^14.15.0 || ^16.13.0}
     peerDependencies:
@@ -1755,6 +1772,7 @@ packages:
       cookie: 0.5.0
       jose: 4.10.0
       next: 12.3.1_biqbaboplfbrettd7655fr4n2y
+      nodemailer: 6.8.0
       oauth: 0.9.15
       openid-client: 5.1.10
       preact: 10.11.1
@@ -1812,6 +1830,11 @@ packages:
   /node-releases/2.0.6:
     resolution: {integrity: sha512-PiVXnNuFm5+iYkLBNeq5211hvO38y63T0i2KKh2KnUs3RpzJ+JtODFjkD8yjLwnDkTYF1eKXheUwdssR+NRZdg==}
     dev: true
+
+  /nodemailer/6.8.0:
+    resolution: {integrity: sha512-EjYvSmHzekz6VNkNd12aUqAco+bOkRe3Of5jVhltqKhEsjw/y0PYPJfp83+s9Wzh1dspYAkUW/YNQ350NATbSQ==}
+    engines: {node: '>=6.0.0'}
+    dev: false
 
   /normalize-path/3.0.0:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
@@ -2438,6 +2461,10 @@ packages:
       tslib: 1.14.1
       typescript: 4.8.4
     dev: true
+
+  /tweetnacl/1.0.3:
+    resolution: {integrity: sha512-6rt+RN7aOi1nGMyC4Xa5DdYiukl2UWCbcJft7YhxReBGQD7OAM8Pbxw6YMo4r2diNEA8FEmu32YOn9rhaiE5yw==}
+    dev: false
 
   /type-check/0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
