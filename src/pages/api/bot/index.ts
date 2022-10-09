@@ -41,5 +41,5 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       console.error("Unknown Type");
       res.status(400).send({ error: "Unknown Type" });
     }
-  }
+  } else res.status(201).send({ text: "Hello!" });
 }
