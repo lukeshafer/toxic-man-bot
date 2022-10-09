@@ -4,6 +4,7 @@ import {
   InteractionType,
   verifyKey,
 } from "discord-interactions";
+import { env } from "../../../env/server.mjs";
 
 // interface ResponseData {
 //   name: string;
@@ -13,15 +14,15 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   console.log(req.body);
 
   if (req.method === "POST") {
-    const signature = req.headers["x-signature-ed25519"];
-    const timestamp = req.headers["x-signature-timestamp"];
+    const signature = req.headers["x-signature-ed25519"] as string;
+    const timestamp = req.headers["x-signature-timestamp"] as string;
     const rawBody = JSON.stringify(req.body);
 
     const isValidRequest = verifyKey(
       rawBody,
       signature,
       timestamp,
-      process.env.PUBLIC_KEY
+      env.DISCORD_PUBLIC_KEY
     );
 
     if (!isValidRequest) {
