@@ -1,5 +1,6 @@
 // @ts-check
 import { env } from "./src/env/server.mjs";
+import register from "./src/server/discord/register.mjs";
 
 /**
  * Don't be scared of the generics here.

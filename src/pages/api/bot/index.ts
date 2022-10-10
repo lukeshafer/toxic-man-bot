@@ -11,8 +11,6 @@ import { env } from "../../../env/server.mjs";
 // }
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  console.log(req.body);
-
   if (req.method === "POST") {
     const signature = req.headers["x-signature-ed25519"] as string;
     const timestamp = req.headers["x-signature-timestamp"] as string;

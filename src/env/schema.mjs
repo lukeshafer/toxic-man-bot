@@ -19,6 +19,8 @@ export const serverSchema = z.object({
   EMAIL_SERVER: z.string(),
   EMAIL_FROM: z.string(),
   DISCORD_PUBLIC_KEY: z.string(),
+  DISCORD_TOKEN: z.string(),
+  DISCORD_APPLICATION_ID: z.string(),
 });
 
 /**
